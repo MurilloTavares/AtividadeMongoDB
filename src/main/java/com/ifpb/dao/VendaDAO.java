@@ -45,11 +45,9 @@ public class VendaDAO {
         return count > 0;
     }
     
-    public boolean inserirItem(int codigo, ItemVenda item){
-        
-        long count = collection.updateOne(eq("codigo", codigo), push("itens", item)).getModifiedCount();
-        
-        return false;
+    public boolean inserirItem(int codigo, ItemVenda item){        
+        long count = collection.updateOne(eq("codigo", codigo), push("itens", item)).getModifiedCount();        
+        return count > 0;
     }
     
 }
